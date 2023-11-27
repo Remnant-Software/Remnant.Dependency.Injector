@@ -8,7 +8,7 @@ namespace Remnant.Dependency.Injector
 {
 
 	/// <summary>
-	/// Default Remnant dependency container container 
+	/// Remnant dependency container 
 	/// </summary>
 	public sealed class RemnantContainer : IContainer
 	{
