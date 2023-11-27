@@ -6,3 +6,5 @@
 - Anywhere, any place in your code the DI container can be requested to resolve the object needed
 - An extension method 'Resolve<<TType>>' is implemented on 'object' to allow any objects to call the container
 - You can use the [Inject] attribute on fields which will automatically inject the dependency object
+
+[Documentation in progress...]
