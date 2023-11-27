@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Company>Remnant Software</Company>
+    <Authors>Neill Verreynne</Authors>
+    <Description>Container for dependency injection using pull pattern.</Description>
+		<Owner>Neill Verreynne</Owner>
+		<Company>Remnant Software</Company>
+		<Copyright>© 2022 by Neill Verreynne</Copyright>
+    <PackageIcon>Remnant.png</PackageIcon>
+    <PackageTags>container;inject;dependency;transient;singleton;injection;pull;global</PackageTags>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Version>2.0.0</Version>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RemnantSoftware/Remnant.Dependency.Injector</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+	</PropertyGroup>
+
+  <ItemGroup>
+		<None Include="LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Remnant.Dependency.Injector.Analyzer\Remnant.Dependency.Injector.Analyzer.csproj" />
+    <ProjectReference Include="..\Remnant.Dependency.Interface\Remnant.Dependency.Interface.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Remnant.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

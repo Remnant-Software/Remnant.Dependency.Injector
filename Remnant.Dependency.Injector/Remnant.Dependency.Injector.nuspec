@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Remnant.Dependency.Injector</id>
+    <version>2.0.0</version>
+    <authors>Neill Verreynne</authors>
+    <owners>Neill Verreynne</owners>
+		<Company>Remnant Software</Company>
+		<Copyright>© 2023 by Neill Verreynne</Copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Container for dependency injection using pull pattern.</description>
+    <dependencies>
+
+    </dependencies>
+		<dependency id="Remnant.Dependency.Injector.Analyzer" version="2.0.0"/>
+		<dependency id="Remnant.Dependency.Interface" version="2.0.0"/>
+  </metadata>
+</package>
