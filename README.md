@@ -20,35 +20,32 @@
 - Or you can instantiate the class and call the 'Inject' method yourself
 - Keep in mind on your constructor, the injected fields will be null (unless you call 'Inject()' as the first thing on your constructor)
 - Ensure that the specified injected fields are not <b>readonly</b>
-- <i>(see example 3)</i>.
+- <i>(see example 4)</i>.
 ------
 ### Quick console app examples (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements">using top-level statements feature</a>): 
 
-#### Example 1: using extension method 'Resolve' on object
+#### Example 1: register something with the container (used by all examples)
 
-```csharp object
+```
 using ConsoleApp;
 using Remnant.Dependency.Injector;
 
 DIContainer
   .Create("MyContainer")
   .Register(new List<string> { "John", "Jane" }, "Names");
+```
 
+#### Example 2: using extension method 'Resolve' on object
+
+```csharp object
 new object()
   .Resolve<List<string>>("Names")
   .ForEach(name => Console.WriteLine(name));
 }
 ```
 
-#### Example 2: using 'Inject' attribute
+#### Example 3: using 'Inject' attribute
 ``` csharp
-using ConsoleApp;
-using Remnant.Dependency.Injector;
-
-DIContainer
-  .Create("MyContainer")
-  .Register(new List<string> { "John", "Jane" }, "Names");
-
 new Members().ListNames();
 ```
 ``` csharp
@@ -66,15 +63,8 @@ namespace ConsoleApp
 }
 ```
 
-#### Example 3: using static 'Create' method
+#### Example 4: using static 'Create' method
 ``` csharp
-using ConsoleApp;
-using Remnant.Dependency.Injector;
-
-DIContainer
-  .Create("MyContainer")
-  .Register(new List<string> { "John", "Jane" }, "Names");
-
 //... static 'Create' member is generated which will do injection
 Members.Create().ListNames();
 ```
