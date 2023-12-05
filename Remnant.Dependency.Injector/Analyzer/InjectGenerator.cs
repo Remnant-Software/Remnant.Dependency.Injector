@@ -2,6 +2,7 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
+using Remnant.Dependency.Injector.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace Remnant.Dependency.Injector
 	{
 		public void Initialize(GeneratorInitializationContext context)
 		{
+			//System.Diagnostics.Debugger.Launch();
 		}
 
 		public void Execute(GeneratorExecutionContext context)
@@ -35,11 +37,10 @@ namespace Remnant.Dependency.Injector
 
 					var usings = new List<string>();
 					var sb = new StringBuilder();
-
-					var ns = @class.Parent as NamespaceDeclarationSyntax;
+					var ns = @class.GetNamespace();
 
 					sb.AppendLine("using Remnant.Dependency.Injector;");
-					sb.AppendLine($"namespace {ns.Name}");
+					sb.AppendLine($"namespace {ns}");
 					sb.AppendLine("{");
 					sb.AppendLine($"\tpublic partial class {@class.Identifier.Text}");
 					sb.AppendLine("\t{");
@@ -86,7 +87,7 @@ namespace Remnant.Dependency.Injector
 					var fieldSymbol = variable.Identifier.Text;
 					var symbol = context.Compilation.GetSemanticModel(variable.SyntaxTree).GetDeclaredSymbol(variable) as IFieldSymbol;
 					var attr = symbol.GetAttributes().FirstOrDefault(a => a.AttributeClass.ToDisplayString() == "Remnant.Dependency.Injector.InjectAttribute");
-					var injectType = symbol.Type.Name;				
+					var injectType = symbol.Type.ToDisplayString();				
 					var useClause = $"using {symbol.Type.ContainingNamespace};";
 
 					if (!usings.Contains(useClause))
