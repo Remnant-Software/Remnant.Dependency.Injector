@@ -14,9 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Remnant.Dependency.Injector.Analyzer\Remnant.Dependency.Injector.Analyzer.csproj" />
     <ProjectReference Include="..\Remnant.Dependency.Injector\Remnant.Dependency.Injector.csproj" />
-    <ProjectReference Include="..\Remnant.Dependency.Interface\Remnant.Dependency.Interface.csproj" />
   </ItemGroup>
 
 </Project>
